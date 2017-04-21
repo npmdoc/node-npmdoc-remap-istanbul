@@ -1,0 +1,477 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/SitePen/remap-istanbul"
+
+    >remap-istanbul (v0.9.5)</a>
+</h1>
+<h4>A tool for remapping Istanbul coverage via Source Maps</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.remap-istanbul">module remap-istanbul</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.remap-istanbul">
+            function <span class="apidocSignatureSpan"></span>remap-istanbul
+            <span class="apidocSignatureSpan">(sources, reports, reportOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.JsonCoverage">
+            function <span class="apidocSignatureSpan">remap-istanbul.</span>JsonCoverage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.loadCoverage">
+            function <span class="apidocSignatureSpan">remap-istanbul.</span>loadCoverage
+            <span class="apidocSignatureSpan">(sources)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.remap">
+            function <span class="apidocSignatureSpan">remap-istanbul.</span>remap
+            <span class="apidocSignatureSpan">(coverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.writeReport">
+            function <span class="apidocSignatureSpan">remap-istanbul.</span>writeReport
+            <span class="apidocSignatureSpan">(collector, reportType, reportOptions, dest, sources)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">remap-istanbul.</span>JsonCoverage.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">remap-istanbul.</span>node</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.remap-istanbul.JsonCoverage">module remap-istanbul.JsonCoverage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.JsonCoverage.JsonCoverage">
+            function <span class="apidocSignatureSpan">remap-istanbul.</span>JsonCoverage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.remap-istanbul.JsonCoverage.prototype">module remap-istanbul.JsonCoverage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.JsonCoverage.prototype.coverage">
+            function <span class="apidocSignatureSpan">remap-istanbul.JsonCoverage.prototype.</span>coverage
+            <span class="apidocSignatureSpan">(sessionId, coverageData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.JsonCoverage.prototype.runEnd">
+            function <span class="apidocSignatureSpan">remap-istanbul.JsonCoverage.prototype.</span>runEnd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.remap-istanbul.node">module remap-istanbul.node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.node.load">
+            function <span class="apidocSignatureSpan">remap-istanbul.node.</span>load
+            <span class="apidocSignatureSpan">(id, contextRequire, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.remap-istanbul.node.normalize">
+            function <span class="apidocSignatureSpan">remap-istanbul.node.</span>normalize
+            <span class="apidocSignatureSpan">(id, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.remap-istanbul" id="apidoc.module.remap-istanbul">module remap-istanbul</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.remap-istanbul" id="apidoc.element.remap-istanbul.remap-istanbul">
+        function <span class="apidocSignatureSpan"></span>remap-istanbul
+        <span class="apidocSignatureSpan">(sources, reports, reportOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remap-istanbul = function (sources, reports, reportOptions) {
+			var sourceStore = new _memory2.default();
+			var collector = (0, _remap3.default)((0, _loadCoverage3.default)(sources), {
+				sources: sourceStore
+			});
+
+			if (!Object.keys(sourceStore.map).length) {
+				sourceStore = undefined;
+			}
+
+			return Promise.all(Object.keys(reports).map(function (reportType) {
+				return (0, _writeReport3.default)(collector, reportType, reportOptions || {}, reports[reportType], sourceStore);
+			}));
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.JsonCoverage" id="apidoc.element.remap-istanbul.JsonCoverage">
+        function <span class="apidocSignatureSpan">remap-istanbul.</span>JsonCoverage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JsonCoverageReporter() {
+			var config = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : {};
+
+			this._collector = new _collector2.default();
+			this._reporter = new _json2.default({
+				file: config.filename,
+				watermarks: config.watermarks
+			});
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.loadCoverage" id="apidoc.element.remap-istanbul.loadCoverage">
+        function <span class="apidocSignatureSpan">remap-istanbul.</span>loadCoverage
+        <span class="apidocSignatureSpan">(sources)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadCoverage(sources) {
+			var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+
+			var warn = options.warn || console.warn;
+
+			var readJSON = options.readJSON || function (filePath) {
+				if (!_fs2.default.existsSync(filePath)) {
+					warn(new Error(&#x27;Cannot find file: &#x22;&#x27; + filePath + &#x27;&#x22;&#x27;));
+					return {};
+				}
+				return JSON.parse(_fs2.default.readFileSync(filePath));
+			};
+
+			if (typeof sources === &#x27;string&#x27;) {
+				sources = [sources];
+			}
+			if (!sources.length) {
+				warn(new SyntaxError(&#x27;No coverage files supplied!&#x27;));
+			}
+			var collector = new _nodeIstanbul.Collector();
+			sources.forEach(function (filePath) {
+				collector.add(readJSON(filePath));
+			});
+
+			return collector.getFinalCoverage();
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.remap" id="apidoc.element.remap-istanbul.remap">
+        function <span class="apidocSignatureSpan">remap-istanbul.</span>remap
+        <span class="apidocSignatureSpan">(coverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function remap(coverage) {
+  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+
+  var smc = new _CoverageTransformer2.default(options);
+
+  if (!Array.isArray(coverage)) {
+    coverage = [coverage];
+  }
+
+  coverage.forEach(function (item) {
+    smc.addCoverage(item);
+  });
+
+  return smc.getFinalCoverage();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.writeReport" id="apidoc.element.remap-istanbul.writeReport">
+        function <span class="apidocSignatureSpan">remap-istanbul.</span>writeReport
+        <span class="apidocSignatureSpan">(collector, reportType, reportOptions, dest, sources)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeReport(collector, reportType, reportOptions, dest, sources) {
+			return new Promise(function (resolve, reject) {
+				if (!(reportType in istanbulReportTypes)) {
+					reject(new SyntaxError(&#x27;Unrecognized report type of &#x22;&#x27; + reportType + &#x27;&#x22;.&#x27;));
+					return;
+				}
+				var Reporter = require(&#x27;istanbul/lib/report/&#x27; + reportType);
+				var options = Object.assign({}, reportOptions);
+				switch (istanbulReportTypes[reportType]) {
+					case &#x27;file&#x27;:
+						options.file = dest;
+						break;
+					case &#x27;directory&#x27;:
+						options.dir = dest;
+						break;
+					case &#x27;console&#x27;:
+						options.log = dest || console.log;
+						break;
+					default:
+						throw new Error(&#x27;Unknown reporter type&#x27;);
+				}
+				if (sources) {
+					options.sourceStore = sources;
+				}
+				var reporter = new Reporter(options);
+				resolve(reporter.writeReport(collector, true));
+			});
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					default:
+						throw new Error(&#x27;Unknown reporter type&#x27;);
+				}
+				if (sources) {
+					options.sourceStore = sources;
+				}
+				var reporter = new Reporter(options);
+				resolve(reporter.<span class="apidocCodeKeywordSpan">writeReport</span>(collector, true));
+			});
+		};
+		module.exports = exports[&#x27;default&#x27;];
+	});
+})(typeof define !== &#x27;function&#x27; ? require(&#x27;amdefine&#x27;)(module) : define);
+//# sourceMappingURL=writeReport.js.map
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.remap-istanbul.JsonCoverage" id="apidoc.module.remap-istanbul.JsonCoverage">module remap-istanbul.JsonCoverage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.JsonCoverage.JsonCoverage" id="apidoc.element.remap-istanbul.JsonCoverage.JsonCoverage">
+        function <span class="apidocSignatureSpan">remap-istanbul.</span>JsonCoverage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JsonCoverageReporter() {
+			var config = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : {};
+
+			this._collector = new _collector2.default();
+			this._reporter = new _json2.default({
+				file: config.filename,
+				watermarks: config.watermarks
+			});
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.remap-istanbul.JsonCoverage.prototype" id="apidoc.module.remap-istanbul.JsonCoverage.prototype">module remap-istanbul.JsonCoverage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.JsonCoverage.prototype.coverage" id="apidoc.element.remap-istanbul.JsonCoverage.prototype.coverage">
+        function <span class="apidocSignatureSpan">remap-istanbul.JsonCoverage.prototype.</span>coverage
+        <span class="apidocSignatureSpan">(sessionId, coverageData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function coverage(sessionId, coverageData) {
+			this._collector.add(coverageData);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.JsonCoverage.prototype.runEnd" id="apidoc.element.remap-istanbul.JsonCoverage.prototype.runEnd">
+        function <span class="apidocSignatureSpan">remap-istanbul.JsonCoverage.prototype.</span>runEnd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runEnd() {
+			this._reporter.writeReport(this._collector, true);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.remap-istanbul.node" id="apidoc.module.remap-istanbul.node">module remap-istanbul.node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.node.load" id="apidoc.element.remap-istanbul.node.load">
+        function <span class="apidocSignatureSpan">remap-istanbul.node.</span>load
+        <span class="apidocSignatureSpan">(id, contextRequire, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(id, contextRequire, fn) {
+		if ((id.indexOf(&#x27;/&#x27;) &#x3e; -1) &#x26;&#x26; module._findPath &#x26;&#x26; module._nodeModulePaths) {
+			var localModulePath = module._findPath(id, module._nodeModulePaths(contextRequire.toUrl(&#x27;.&#x27;)));
+			if (localModulePath !== false) {
+				id = localModulePath;
+			}
+		}
+		var oldDefine = global.define;
+		var result;
+		global.define = undefined;
+		try {
+			result = nodeRequire(id);
+		}
+		finally {
+			global.define = oldDefine;
+		}
+		fn(result);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.remap-istanbul.node.normalize" id="apidoc.element.remap-istanbul.node.normalize">
+        function <span class="apidocSignatureSpan">remap-istanbul.node.</span>normalize
+        <span class="apidocSignatureSpan">(id, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalize(id, fn) {
+		if (id.charAt(0) === &#x27;.&#x27;) {
+			id = amdRequire.toUrl(fn(&#x27;./&#x27; + id));
+		}
+		return id;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
